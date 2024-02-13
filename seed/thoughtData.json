@@ -1,0 +1,41 @@
+[
+    {
+        "thoughtText": "The Zombie Apocalypse needs to happen soon",
+        "username": "jbowers",
+        "reactions": []
+    },
+    {
+        "thoughtText": "Not my circus. Not my monkeys.",
+        "username": "klenhart",
+        "reactions": [
+            {
+                "reactionBody": "Dogs rule!",
+                "username": "bheuer"
+            },
+            {
+                "reactionBody": "They're comging to take me away! Ha! Ha!",
+                "username": "jbowers"
+            }
+        ]
+    },
+    {
+        "thoughtText": "SQL Server is far superior to MondoDb",
+        "username": "egoss",
+        "reactions": [
+            {
+                "reactionBody": "Amen!",
+                "username": "jbowers"
+            }
+        ]
+    },
+    {
+        "thoughtText": "This is only a thought",
+        "username": "bheuer",
+        "reactions": []
+    },
+    {
+        "thoughtText": "That's not my problem",
+        "username": "egoss",
+        "reactions": []
+    }
+  ]
