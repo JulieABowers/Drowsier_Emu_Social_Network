@@ -1,0 +1,21 @@
+{
+    "name": "Drowsier Emu Social Network",
+    "version": "1.0.0",
+    "description": "Drowsier Emu Social Network",
+    "main": "server.js",
+    "scripts": {
+        "start": "node index.js",
+        "watch": "nodemon index.js",
+        "seed": "node utils/seed"
+    },
+    "keywords": [],
+    "author": "Julie Bowers",
+    "license": "MIT",
+    "dependencies": {
+        "express": "^4.18.2",
+        "mongoose": "^6.12.6"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.22"
+    }
+}
