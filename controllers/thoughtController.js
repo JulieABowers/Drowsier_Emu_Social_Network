@@ -4,12 +4,15 @@ const noThoughtFound = 'No thought with this id!';
 module.exports = {
     async getThoughts(req, res) {
         try {
-            const thoughts = await Thought.find();
-            const thoughtObj = {
-                thoughts,
-                thoughtCount: await totalThoughts(),
-            };
-            res.json(thoughtObj);
+            const thoughts =  await Thought.find({})
+            .populate({
+                path: "reactions",
+                select: "-__v",
+            })
+            .select("-__v")
+            .sort({ _id: -1 });
+
+            res.json(thoughts);
         } catch (err) {
             res.status(500).json(err)
         }
@@ -36,20 +39,19 @@ module.exports = {
         }
     },
 
-    async getThoughtById({ params }, res) {
+    async getThoughtById(req, res) {
         try {
-            const thought = await Thought.findOne({ _id: params.id })
+            const thought = await Thought.findOne({ _id: req.params.id })
             .populate({
                 path: 'reactions',
                 select: '-__v'
-            })
-            .select('-__v');
+            });
 
             if (!thought) {
                 return res.status(404).json({ message: noThoughtFound });
             }
             
-            res.json(dbThoughtData);
+            res.json(thought);
         } catch (err) {
             console.error(err);
             res.sendStatus(400);
